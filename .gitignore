@@ -1,0 +1,23 @@
+# Dependencies
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment variables (secrets)
+.env.local
+.env.*.local
+
+# Editor / OS files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Build output
+/dist

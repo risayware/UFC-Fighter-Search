@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+  <rect width="300" height="400" fill="#1F1F1F"/>
+  <circle cx="150" cy="155" r="50" fill="#2D2D2D"/>
+  <path d="M75 320 Q75 250 150 250 Q225 250 225 320 L225 400 L75 400 Z" fill="#2D2D2D"/>
+  <text x="150" y="370" text-anchor="middle" fill="#6B6B6B" font-family="DM Sans, sans-serif" font-size="14" font-weight="500">No photo available</text>
+</svg>

@@ -1,0 +1,435 @@
+/* =========================================================
+   UFC Fighter Search — Global Styles
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+@import "tailwindcss";
+
+/* ----- Design tokens ----- */
+@theme {
+  --color-primary:  #0A0A0A;
+  --color-surface:  #151515;
+  --color-elevated: #1F1F1F;
+  --color-border:   #2D2D2D;
+
+  --color-red:      #D20A0A;
+  --color-red-dark: #A00808;
+  --color-gold:     #C1A14F;
+
+  --color-light-100: #FFFFFF;
+  --color-light-200: #E0E0E0;
+  --color-gray-100:  #9A9A9A;
+  --color-gray-200:  #6B6B6B;
+
+  --font-dm-sans: "DM Sans", sans-serif;
+  --font-bebas:   "Bebas Neue", sans-serif;
+
+  --breakpoint-xs: 480px;
+
+  --background-image-hero-pattern: url("/background.png");
+}
+
+/* ----- Base ----- */
+@layer base {
+  body {
+    font-family: "DM Sans", sans-serif;
+    background: #0A0A0A;
+    color: #FFFFFF;
+    font-optical-sizing: auto;
+  }
+
+  h1 {
+    @apply mx-auto max-w-4xl text-center text-5xl font-bold leading-tight
+           tracking-[-1px] text-white sm:text-[64px] sm:leading-[76px];
+  }
+
+  h2 {
+    @apply text-2xl font-bold text-white sm:text-3xl;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  main {
+    @apply min-h-screen relative bg-primary;
+  }
+
+  header {
+    @apply sm:mt-10 mt-5;
+  }
+
+  header img {
+    @apply w-full max-w-lg h-auto object-contain mx-auto drop-shadow-md;
+  }
+}
+
+/* ----- Components ----- */
+@layer components {
+
+  .pattern {
+    @apply bg-hero-pattern w-full h-screen bg-center bg-cover absolute z-0;
+  }
+
+  .wrapper {
+    @apply px-5 py-12 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10;
+  }
+
+  /* ----- Search bar ----- */
+
+  .search {
+    @apply w-full bg-elevated/30 border border-border px-4 py-3 rounded-lg
+           mt-10 max-w-3xl mx-auto;
+    transition: border-color 0.2s ease;
+
+    &:focus-within {
+      border-color: #D20A0A;
+    }
+
+    & div {
+      @apply relative flex items-center;
+    }
+
+    & img {
+      @apply absolute left-2 h-5 w-5 opacity-60;
+    }
+
+    & input {
+      @apply w-full bg-transparent py-2 pr-10 pl-10 text-base
+             text-light-200 placeholder-gray-100 outline-hidden;
+    }
+  }
+
+  .search-clear {
+    @apply absolute right-2 text-gray-100 hover:text-white text-lg
+           bg-transparent border-none p-1 leading-none;
+    transition: color 0.15s ease;
+  }
+
+  /* ----- Weight class filter tabs ----- */
+
+  .weight-class-filters {
+    @apply mt-8 flex flex-wrap gap-2 justify-center;
+  }
+
+  .filter-btn {
+    @apply px-3 py-1.5 rounded-full border border-border text-gray-100
+           text-sm font-medium bg-surface;
+    transition: all 0.15s ease;
+
+    &:hover {
+      border-color: #D20A0A;
+      color: #FFFFFF;
+    }
+
+    &.active {
+      @apply bg-red text-white border-red;
+    }
+  }
+
+  /* ----- Trending section ----- */
+
+  .trending {
+    @apply mt-20;
+
+    & ul {
+      @apply flex flex-row overflow-x-auto gap-5 -mt-10 w-full hide-scrollbar;
+    }
+
+    & ul li {
+      @apply min-w-[230px] flex flex-row items-center;
+    }
+
+    & ul li p {
+      @apply fancy-text mt-[22px] text-nowrap;
+    }
+
+    & ul li img {
+      @apply w-[127px] h-[163px] rounded-lg object-cover object-top -ml-3.5;
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  /* ----- Fighter grid ----- */
+
+  .all-fighters {
+    @apply mt-16 space-y-6;
+
+    & ul {
+      @apply grid grid-cols-1 gap-5 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+    }
+  }
+
+  /* ----- Fighter card ----- */
+
+  .fighter-card {
+    @apply bg-surface rounded-2xl overflow-hidden shadow-lg cursor-pointer;
+    border: 1px solid #2D2D2D;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      border-color: #D20A0A;
+      box-shadow: 0 8px 30px rgba(210, 10, 10, 0.2);
+    }
+  }
+
+  .card-image-wrapper {
+    @apply relative overflow-hidden;
+    aspect-ratio: 3/4;
+
+    & img {
+      @apply w-full h-full object-cover object-top;
+      transition: transform 0.3s ease;
+    }
+
+    .fighter-card:hover & img {
+      transform: scale(1.04);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(21, 21, 21, 0.95), transparent);
+    }
+  }
+
+  .undefeated-badge {
+    @apply absolute top-3 right-3 z-10 bg-gold text-black text-xs font-bold
+           px-2 py-1 rounded-full uppercase tracking-wider;
+  }
+
+  .card-info {
+    @apply p-4 flex flex-col gap-1;
+  }
+
+  .fighter-nickname {
+    @apply text-xs text-gray-100 italic;
+  }
+
+  .fighter-card h3 {
+    @apply text-white font-bold text-base leading-tight line-clamp-1;
+  }
+
+  .card-record {
+    @apply flex items-baseline gap-2 mt-1;
+  }
+
+  .record-number {
+    @apply text-red font-bold text-lg;
+  }
+
+  .record-label {
+    @apply text-gray-200 text-xs font-medium;
+  }
+
+  .card-meta {
+    @apply flex items-center gap-2 flex-wrap mt-1;
+  }
+
+  .weight-class-tag {
+    @apply text-xs text-gray-100 bg-elevated rounded-full px-2 py-0.5
+           border border-border;
+  }
+
+  .fighting-style {
+    @apply text-xs text-gray-100;
+  }
+
+  .dot {
+    @apply text-gray-200 text-xs;
+  }
+
+  /* ----- Empty / loading states ----- */
+
+  .no-results {
+    @apply text-center py-16 flex flex-col gap-2;
+
+    & p {
+      @apply text-gray-100 text-lg;
+    }
+  }
+
+  .no-results-hint {
+    @apply text-gray-200 text-sm;
+  }
+
+  .spinner-wrapper {
+    @apply flex justify-center items-center py-20;
+  }
+
+  /* ----- Fighter modal ----- */
+
+  .modal-backdrop {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.15s ease;
+  }
+
+  .modal-content {
+    @apply relative bg-surface rounded-2xl w-full max-w-2xl max-h-[90vh]
+           overflow-y-auto;
+    border: 1px solid #2D2D2D;
+    animation: slideUp 0.2s ease;
+  }
+
+  .modal-close {
+    @apply absolute top-4 right-4 z-10 text-gray-100 hover:text-white
+           text-xl bg-elevated rounded-full w-8 h-8 flex items-center
+           justify-center border border-border;
+    transition: all 0.15s ease;
+
+    &:hover {
+      border-color: #D20A0A;
+      color: #D20A0A;
+    }
+  }
+
+  .modal-header {
+    @apply flex flex-col sm:flex-row gap-6 p-6;
+  }
+
+  .modal-image-wrapper {
+    @apply flex-shrink-0;
+
+    & img {
+      @apply w-full sm:w-48 h-64 sm:h-64 object-cover object-top rounded-xl;
+    }
+  }
+
+  .modal-basic-info {
+    @apply flex flex-col gap-3 flex-1;
+  }
+
+  .modal-nickname {
+    @apply text-sm text-gray-100 italic;
+  }
+
+  .modal-content h2 {
+    @apply text-2xl font-bold text-white leading-tight;
+  }
+
+  .modal-weight-class {
+    @apply inline-block bg-red/20 text-red border border-red/40 rounded-full
+           px-3 py-1 text-sm font-medium w-fit;
+  }
+
+  .modal-record {
+    @apply flex items-center gap-4 mt-2;
+  }
+
+  .record-stat {
+    @apply flex flex-col items-center;
+  }
+
+  .record-val {
+    @apply text-3xl font-bold;
+
+    &.wins   { color: #22c55e; }
+    &.losses { color: #ef4444; }
+    &.draws  { color: #9A9A9A; }
+  }
+
+  .record-lbl {
+    @apply text-xs text-gray-100 uppercase tracking-wider;
+  }
+
+  .record-divider {
+    @apply w-px h-8 bg-border;
+  }
+
+  .win-bar-wrapper {
+    @apply mt-2;
+  }
+
+  .win-bar-label {
+    @apply flex justify-between text-sm text-gray-100 mb-1;
+  }
+
+  .win-bar-pct {
+    @apply text-red font-semibold;
+  }
+
+  .win-bar-track {
+    @apply w-full h-2 bg-elevated rounded-full overflow-hidden;
+  }
+
+  .win-bar-fill {
+    @apply h-full bg-red rounded-full;
+    transition: width 0.4s ease;
+  }
+
+  .modal-divider {
+    @apply mx-6 border-t border-border;
+  }
+
+  .modal-stats {
+    @apply p-6;
+  }
+
+  .stats-title {
+    @apply text-lg font-semibold text-white mb-4;
+  }
+
+  .stats-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-3;
+  }
+
+  .stat-row {
+    @apply flex flex-col gap-0.5 bg-elevated rounded-lg p-3 border border-border;
+  }
+
+  .stat-label {
+    @apply text-xs text-gray-100 uppercase tracking-wider;
+  }
+
+  .stat-value {
+    @apply text-sm text-white font-medium;
+  }
+}
+
+/* ----- Custom utilities ----- */
+
+@utility text-gradient {
+  @apply bg-linear-to-r from-red to-[#FF6B6B] bg-clip-text text-transparent;
+}
+
+@utility fancy-text {
+  -webkit-text-stroke: 5px rgba(210, 10, 10, 0.5);
+  font-size: 190px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+@utility hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ----- Animations ----- */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

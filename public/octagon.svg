@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <polygon
+            points="35,5 65,5 95,35 95,65 65,95 35,95 5,65 5,35"
+            fill="#D20A0A"
+            stroke="#D20A0A"
+            stroke-width="2"
+    />
+    <polygon
+            points="38,15 62,15 85,38 85,62 62,85 38,85 15,62 15,38"
+            fill="#0A0A0A"
+    />
+    <text
+            x="50" y="57"
+            text-anchor="middle"
+            font-family="Arial Black, sans-serif"
+            font-weight="900"
+            font-size="28"
+            fill="#D20A0A"
+            letter-spacing="-1"
+    >UFC</text>
+</svg>
