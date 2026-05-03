@@ -2,7 +2,7 @@
 
 A React web app for searching and exploring active UFC fighter profiles. Built with the free Octagon API for fighter data and Appwrite as the cloud database powering the trending-search feature.
 
-> **Live demo:** _coming soon_ &nbsp;·&nbsp; **Repo:** this one
+> **Live demo:** _https://ufc-fighter-search.vercel.app/_ &nbsp;·&nbsp; **Repo:** this one
 
 ---
 
