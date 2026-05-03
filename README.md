@@ -5,7 +5,13 @@ A React web app for searching and exploring active UFC fighter profiles. Built w
 > **Live demo:** _https://ufc-fighter-search.vercel.app/_ &nbsp;·&nbsp; **Repo:** this one
 
 ---
+## Screenshots
 
+![Homepage with weight class filters and trending fighters](./docs/homepage.png)
+
+| Trending Fighters | Fighter Detail Modal |
+|---|---|
+| ![Trending fighters section showing top 5 most-searched](./docs/trending-fighters.png) | ![Fighter detail modal with stats](./docs/fighter-modal.png) |
 ## Features
 
 - **Instant search** — debounced 500ms input that filters the active UFC roster by name
