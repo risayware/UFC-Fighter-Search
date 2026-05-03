@@ -31,6 +31,20 @@ A React web app for searching and exploring active UFC fighter profiles. Built w
 
 ---
 
+## Screenshots
+
+### Homepage
+![Homepage](public/Screenshots/homepage.png)
+
+### Search Results
+![Search Results](public/Screenshots/search-result.png)
+
+### Fighter Card / Details
+![Fighter Card](public/Screenshots/fighter-card.png)
+
+### Trending Fighters
+![Trending Fighters](public/Screenshots/trending-fighters.png)
+
 ## Getting started locally
 
 ```bash
