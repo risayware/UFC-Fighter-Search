@@ -123,7 +123,11 @@ src/
 
 ## How I built this
 
-I'm a fresh software engineering graduate building personal projects. I started from a "movie search" tutorial pattern and adapted it for a domain I actually care about (UFC), then extended it with new pieces: a fighter detail modal, weight-class filters, and stricter handling of the API's quirks. I used AI assistance for code review, debugging, and pair-programming through the harder parts and then went back through the entire codebase line by line to make sure I understand every decision and can defend every choice. Happy to walk through any file.
+I'm a recent software engineering graduate building personal projects to strengthen my frontend and API skills.
+
+This project started from a movie search app concept, but I rebuilt it around something I’m personally interested in: UFC. I adapted the structure, connected it to a UFC fighter API, and added features such as fighter search, weight-class filtering, fighter detail views, and better handling for inconsistent API data.
+
+The main goal was to practise building a real React project from start to finish, including components, state, API calls, loading states, error handling, and clean UI structure.
 
 ---
 
