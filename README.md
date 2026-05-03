@@ -123,7 +123,7 @@ src/
 
 ## How I built this
 
-I'm a fresh software engineering graduate builduing personal projects. I started from a "movie search" tutorial pattern and adapted it for a domain I actually care about (UFC), then extended it with new pieces: a fighter detail modal, weight-class filters, and stricter handling of the API's quirks. I used AI assistance for code review, debugging, and pair-programming through the harder parts and then went back through the entire codebase line by line to make sure I understand every decision and can defend every choice. Happy to walk through any file.
+I'm a fresh software engineering graduate building personal projects. I started from a "movie search" tutorial pattern and adapted it for a domain I actually care about (UFC), then extended it with new pieces: a fighter detail modal, weight-class filters, and stricter handling of the API's quirks. I used AI assistance for code review, debugging, and pair-programming through the harder parts and then went back through the entire codebase line by line to make sure I understand every decision and can defend every choice. Happy to walk through any file.
 
 ---
 
