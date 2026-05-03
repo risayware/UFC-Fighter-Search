@@ -144,10 +144,15 @@
 
     & ul li p {
       @apply fancy-text mt-[22px] text-nowrap;
+      position: relative;
+      z-index: 2;
     }
 
     & ul li img {
-      @apply w-[127px] h-[163px] rounded-lg object-cover object-top -ml-3.5;
+      @apply w-[127px] h-[163px] rounded-lg object-cover object-top;
+      margin-left: -50px;
+      position: relative;
+      z-index: 1;
       box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
     }
   }
